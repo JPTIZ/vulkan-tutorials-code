@@ -103,6 +103,7 @@ private:
         }
 
         auto extension_count = uint32_t{0};
+        vkEnumerateInstanceExtensionProperties(nullptr, &extension_count, nullptr);
         auto extensions = std::vector<VkExtensionProperties>(extension_count);
         vkEnumerateInstanceExtensionProperties(nullptr, &extension_count, extensions.data());
 
